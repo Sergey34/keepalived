@@ -16,16 +16,16 @@ NAME=$2
 STATE=$3
 
 case $STATE in
-        "MASTER") echo "I'm the MASTER! Whup whup." > /proc/1/fd/1
+        "MASTER") ./dts/raw-transformation-service/start.sh
                   exit 0
                   ;;
-        "BACKUP") echo "Ok, i'm just a backup, great." > /proc/1/fd/1
+        "BACKUP") ./dts/raw-transformation-service/stop.sh
                   exit 0
                   ;;
-        "FAULT")  echo "Fault, what ?" > /proc/1/fd/1
+        "FAULT")  ./dts/raw-transformation-service/stop.sh
                   exit 0
                   ;;
-        *)        echo "Unknown state" > /proc/1/fd/1
+        *)        ./dts/raw-transformation-service/stop.sh
                   exit 1
                   ;;
 esac
