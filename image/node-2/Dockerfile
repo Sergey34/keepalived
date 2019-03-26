@@ -8,3 +8,4 @@ ADD keepalived /container/service/keepalived/assets/notify.sh
 #CMD ["java", "-Xmx200m", "-jar", "/app/market.jar"]
 RUN apk --no-cache add \
     openjdk8-jre \
+    curl \
