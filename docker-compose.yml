@@ -1,6 +1,8 @@
 version: '2.1'
 services:
   node_1:
+    cap_add:
+    - NET_ADMIN
     network_mode: host
     volumes:
     - ./image/dts_shared_config:/dts/raw-transformation-service/config
@@ -8,6 +10,8 @@ services:
     ports:
     - 3901:3903
   node_2:
+    cap_add:
+    - NET_ADMIN
     network_mode: host
     volumes:
     - ./image/dts_shared_config:/dts/raw-transformation-service/config
