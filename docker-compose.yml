@@ -2,13 +2,13 @@ version: '2.1'
 services:
   node_1:
     volumes:
-    - c:/Users/seko0716/Desktop/docker/keepalived/image/dts_shared_config:/dts/raw-transformation-service/config
+    - image/dts_shared_config:/dts/raw-transformation-service/config
     image: seko/demo_node_1
     ports:
     - 3901:3903
   node_2:
     volumes:
-    - c:/Users/seko0716/Desktop/docker/keepalived/image/dts_shared_config:/dts/raw-transformation-service/config
+    - image/dts_shared_config:/dts/raw-transformation-service/config
     image: seko/demo_node_2
     ports:
     - 3902:3903
