@@ -16,16 +16,16 @@ NAME=$2
 STATE=$3
 
 case $STATE in
-        "MASTER") ./dts/raw-transformation-service/start.sh
+        "MASTER") /dts/raw-transformation-service/start.sh
                   exit 0
                   ;;
-        "BACKUP") ./dts/raw-transformation-service/stop.sh
+        "BACKUP") /dts/raw-transformation-service/stop.sh
                   exit 0
                   ;;
-        "FAULT")  ./dts/raw-transformation-service/stop.sh
+        "FAULT")  /dts/raw-transformation-service/stop.sh
                   exit 0
                   ;;
-        *)        ./dts/raw-transformation-service/stop.sh
+        *)        /dts/raw-transformation-service/stop.sh
                   exit 1
                   ;;
 esac
