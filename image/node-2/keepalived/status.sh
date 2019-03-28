@@ -1,5 +1,11 @@
-code=`curl -o -I -L -s -w "%{http_code}" localhost:3903`
-if [ "$code" == 200 ]; then
+#!/bin/bash
+
+
+STATUS=$(ps ax | grep -v grep | grep java)
+
+if ["$STATUS" != ""]
+then
   exit 0
+else
+  exit 1
 fi
-exit 1

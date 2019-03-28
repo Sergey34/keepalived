@@ -17,9 +17,12 @@ STATE=$3
 
 case $STATE in
         "MASTER") /dts/raw-transformation-service/start.sh
+                  echo "I am master" > /dts/master.txt
+                  nohup java -jar /dts/raw-transformation-service/demo-0.0.1-SNAPSHOT.jar >& /dts/raw-transformation-servicet.log &
                   exit 0
                   ;;
         "BACKUP") /dts/raw-transformation-service/stop.sh
+                  kill -9 java
                   exit 0
                   ;;
         "FAULT")  /dts/raw-transformation-service/stop.sh
