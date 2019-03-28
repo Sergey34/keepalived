@@ -1,9 +1,8 @@
 #!/bin/bash
 
-
 STATUS=$(ps ax | grep -v grep | grep java)
 
-if ["$STATUS" != ""]
+if [ "$STATUS" != "" ]
 then
   exit 0
 else

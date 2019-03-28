@@ -16,19 +16,20 @@ NAME=$2
 STATE=$3
 
 case $STATE in
-        "MASTER") /dts/raw-transformation-service/start.sh
-                  echo "I am master" > /dts/master.txt
+        "MASTER") echo "I am MASTER" > /dts/master.txt
                   nohup java -jar /dts/raw-transformation-service/demo-0.0.1-SNAPSHOT.jar >& /dts/raw-transformation-servicet.log &
                   exit 0
                   ;;
-        "BACKUP") /dts/raw-transformation-service/stop.sh
-                  kill -9 java
+        "BACKUP") echo "I am BACKUP" > /dts/master.txt
+                  kill java
                   exit 0
                   ;;
-        "FAULT")  /dts/raw-transformation-service/stop.sh
+        "FAULT")  echo "I am FAULT" > /dts/master.txt
+                  kill java
                   exit 0
                   ;;
         *)        /dts/raw-transformation-service/stop.sh
+                  kill java
                   exit 1
                   ;;
 esac
