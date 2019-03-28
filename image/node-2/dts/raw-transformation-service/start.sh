@@ -1,0 +1,1 @@
+nohup java -jar /dts/raw-transformation-service/demo-0.0.1-SNAPSHOT.jar >& /dts/raw-transformation-servicet.log &
