@@ -8,7 +8,7 @@ services:
     - ./image/dts_shared_config:/dts/raw-transformation-service/config
     image: seko/demo_node_1
     ports:
-    - 3901:3903
+    - 3901:8080
   node_2:
     cap_add:
     - NET_ADMIN
@@ -17,4 +17,4 @@ services:
     - ./image/dts_shared_config:/dts/raw-transformation-service/config
     image: seko/demo_node_2
     ports:
-    - 3902:3903
+    - 3901:8080
